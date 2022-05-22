@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Popup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./result.css">
+</head>
+<body>
+    <div class="popup">
+        <button id="close" onclick="self.close()">&times;</button>
+        <h2>Result</h2>
+        <p id="result">
+            
+        </p>
+        <a href="#" onclick="getResult()">Get Result</a>
+    </div>
+    <!--Script-->
+    <script type="text/javascript">
+window.addEventListener("load", function(){
+    setTimeout(
+        function open(event){
+            document.querySelector(".popup").style.display = "block";
+        },
+        0 
+    )
+});
+
+
+document.querySelector("#close").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+});
+
+const num = 1;
+function getResult(){
+    if(num===0){
+        document.getElementById('result').innerHTML = "You are not suffering from any health issue."
+    }else{
+        document.getElementById('result').innerHTML = "You are suffering from any health issue."
+    }
+}
+    </script>
+</body>
+</html>
